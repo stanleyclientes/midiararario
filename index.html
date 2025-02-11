@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    
+    <div class="quiz-container">
+        <div id="start-screen">
+            <img src="/img/logo.png" class="logo" alt="" srcset="">
+            <h2>INSCRIÇÕES ABERTAS!</h2>
+            <h4>Para participar do processo seletivo, por favor, preencha esse formulário. Em caso de aprovação, você assumirá os comprimissos e responsabilidades do corpo ministerial.</h4><br>
+            <button id="start-btn">Vamos começar!</button>
+        </div>
+        <div id="quiz" style="display: none;">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            
+            <h2 id="question">Pergunta do Quiz</h2>
+            <div class="answers">
+                <div class="answer" id="a_text" data-answer="a">Resposta A</div>
+                <div class="answer" id="b_text" data-answer="b">Resposta B</div>
+                <div class="answer" id="c_text" data-answer="c">Resposta C</div>
+                <div class="answer" id="d_text" data-answer="d">Resposta D</div>
+                <div class="answer" id="d_text" data-answer="e">Resposta E</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>
