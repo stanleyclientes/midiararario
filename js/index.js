@@ -95,6 +95,22 @@ const quizData = [
         },
         correto: "b"
     }, 
+    {
+        question: "Em relação à Cura da Alma:",
+        a: {
+            text: "Concluído",
+            emoji: "😇"
+        },
+        b: {
+            text: "Em andamento",
+            emoji: "🤕"
+        },
+        c: {
+            text: "Ainda não iniciei",
+            emoji: "🤒"
+        },
+        correto: "b"
+    }    
 ];
 
 const startScreen = document.getElementById('start-screen');
