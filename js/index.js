@@ -225,12 +225,12 @@ answerEls.forEach(answerEl => {
                 <!-- Replace with accesKey sent to your email -->
                 <input type="hidden" name="accessKey" value="e8c2400d-2269-4633-b079-2b0e8c2eb1d7"> <!-- Required -->
 
-                <input type="text" name="$Nome"> 
-                <input type="text" name="$Idade"> 
-                <input type="text" name="$Email"> 
-                <input type="text" name="$Whatsapp">
+                <input type="text" name="$Nome" placeholder="Nome Completo"> 
+                <input type="text" name="$Idade" placeholder="Idade"> 
+                <input type="text" name="$Email" placeholder="Email"> 
+                <input type="text" name="$Whatsapp" placeholder="Whatsapp">
                 <p>Você foi indicado?</p>
-                <input type="text" name="$Indicador" value="" placeholder="Se sim, quem indicou?">
+                <input type="text" name="$Indicador" value="" placeholder="Se sim, quem? Se ninguém, deixe em branco">
                 <textarea name="$RESPOSTAS...DO...CANDIDATO:" id="message" style="display: none;"></textarea>
 
                 <input type="hidden" name="subject" value="PROCESSO SELETIVO MIDIA RARA RIO"> <!-- Optional -->
