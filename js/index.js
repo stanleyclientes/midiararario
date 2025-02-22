@@ -221,6 +221,7 @@ answerEls.forEach(answerEl => {
         } else {
             quiz.innerHTML = `
             <!-- Make sure you don't change the form action-->
+            <h2>Preencha o formulário</h2>
             <form action="https://api.staticforms.xyz/submit" method="post">
                 <!-- Replace with accesKey sent to your email -->
                 <input type="hidden" name="accessKey" value="e8c2400d-2269-4633-b079-2b0e8c2eb1d7"> <!-- Required -->
