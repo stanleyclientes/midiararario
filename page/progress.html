@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Quase Finalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #000;
+            color: #fff;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 30px;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #e62b1d;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            transition: width 0.2s;
+        }
+        #group-link {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #69c71c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        #texto-grupo {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Finalizando Cadastro</h1>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+    
+    <p id="texto-grupo">Para finalizar, entre no grupo abaixo:</p><br>
+    <a id="group-link" href="https://chat.whatsapp.com/Jw9xTLvbtxvIE7zbmT2CSZ" target="_blank">Entrar no Grupo</a>
+
+    
+    <script>
+        let progress = 0;
+        function updateProgress() {
+            if (progress < 98) {
+                progress++;
+                document.getElementById("progress-bar").style.width = progress + "%";
+                document.getElementById("progress-bar").innerText = progress + "%";
+                setTimeout(updateProgress, 50);
+            } else {
+                document.getElementById("group-link").style.display = "inline-block";
+                document.getElementById("texto-grupo").style.display = "inline-block";
+
+            }
+        }
+        updateProgress();
+    </script>
+</body>
+</html>

@@ -133,6 +133,7 @@ function saveAnswer(selectedAnswerText, inputValue = '') {
     
     // Exibe no console para acompanhar as respostas salvas
     console.log(respostasSelecionadas);
+    console.log(respostasSelecionadas[0].text)
 }
 
 // Evento para iniciar o quiz
@@ -219,17 +220,58 @@ answerEls.forEach(answerEl => {
             loadQuiz();
         } else {
             quiz.innerHTML = `
-                <div>
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="Whatsapp DDD + 00000-0000">
-                    <input type="text" placeholder="Idade"> <br><br>
-                    <p>Você foi indicado?</p>
-                    <input type="radio" name="" id=""> Não <br>
-                    <input type="radio" name="" id=""> Sim <br>
-                    <input type="text" placeholder="Quem indicou?"> <br><br>
-                    <button>Finalizar</button>
-                </div>
+            <!-- Make sure you don't change the form action-->
+            <form action="https://api.staticforms.xyz/submit" method="post">
+                <!-- Replace with accesKey sent to your email -->
+                <input type="hidden" name="accessKey" value="e8c2400d-2269-4633-b079-2b0e8c2eb1d7"> <!-- Required -->
+
+                <input type="text" name="$Nome"> 
+                <input type="text" name="$Idade"> 
+                <input type="text" name="$Email"> 
+                <input type="text" name="$Whatsapp">
+                <p>Você foi indicado?</p>
+                <input type="text" name="$Indicador" value="" placeholder="Se sim, quem indicou?">
+                <textarea name="$RESPOSTAS...DO...CANDIDATO:" id="message" style="display: none;"></textarea>
+
+                <input type="hidden" name="subject" value="PROCESSO SELETIVO MIDIA RARA RIO"> <!-- Optional -->
+                <!-- If you want replyTo to be set to specific email -->
+                <input type="hidden" name="replyTo" value="teste@example.com"> <!-- Optional -->
+                <!-- Specify @ as reply to value if you want it to be customers email -->
+                <input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+                <!-- If you want form to redirect to a specific url after submission -->
+                <input type="hidden" name="redirectTo" value="https://midiararario.vercel.app/page/progress.html"> <!-- Optional -->
+                <button type="submit" value="Submit">Finalizar</button>
+            </form>
             `;
         }
+
+        var Q0 = respostasSelecionadas[0].text;
+        var Q1 = respostasSelecionadas[1].text;
+        var Q2 = respostasSelecionadas[2].text;
+        var Q3 = respostasSelecionadas[3].text;
+        var Q4 = respostasSelecionadas[4].text;
+        var Q5 = respostasSelecionadas[5].text;
+
+        var texto = `
+        <strong>Já fez parte da mídia em algum outro ministério?</strong> 
+        <br> ${Q0} 
+        <br><br>
+        <strong>Possui experiência ou curso em áreas ligadas a som, vídeo, imagem ou cinegrafia? Se sim, qual seu grau de conhecimento?</strong> 
+        <br> ${Q1}
+        <br><br>
+        <strong>Possui curso ou afinidade em quais áreas da mídia?</strong> 
+        <br> ${Q2}
+        <br><br>
+        <strong>Qual sua disponibilidade?</strong> 
+        <br> ${Q3}
+        <br><br>
+        <strong>Em relação ao Projeto Avançai:</strong> 
+        <br> ${Q4}
+        <br><br>
+        <strong>Em relação à Cura da Alma:</strong> 
+        <br> ${Q5}
+        <br>
+        `;
+        document.getElementById("message").value = texto;
     });
 });
